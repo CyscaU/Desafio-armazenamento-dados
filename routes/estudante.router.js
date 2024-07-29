@@ -5,7 +5,7 @@ const {
     loginEstudante,
     getAllEstudante,
     
-    } = require('../controllers/product-controller')
+    } = require('../controllers/estudante.controller')
 const router =  express.Router()
 
 router.use(express.json())

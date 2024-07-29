@@ -33,18 +33,18 @@ const getEstudante = async (req, res) => {
 
 const signupEstudante = async (req, res) => {
     try {
-        const { nome, idade, curso } = req.body;
+        const { nome, email, password } = req.body;
 
         
-        if (!nome || !idade || !curso) {
+        if (!nome || !email || !password) {
             return res.status(400).json({ message: "Todos os campos são necessários" });
         }
 
         
         const novoEstudante = await Estudante.create({
             nome,
-            idade,
-            curso
+            email,
+            password
         });
 
         res.status(201).json(novoEstudante);
